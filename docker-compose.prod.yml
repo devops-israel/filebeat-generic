@@ -1,0 +1,10 @@
+version: '2'
+services:
+  filebeat:
+    image: devopsil/filebeat-generic
+    environment:
+      REDIS_HOST: 127.0.0.1
+      LOG_LEVEL: info
+    volumes:
+      - "/var/lib/docker/containers:/var/lib/docker/containers:ro"
+      - "/var/log:/var/log:ro"
