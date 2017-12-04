@@ -1,6 +1,6 @@
 # filebeat-generic
 
-Filebeat container, alternative to fluentd used to ship kubernetes cluster and pod logs
+Filebeat container, alternative to fluentd used to ship logs.
 
 ## Getting Started
 This container is designed to ship logs to Redis for further processing.
