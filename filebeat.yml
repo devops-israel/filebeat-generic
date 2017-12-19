@@ -7,9 +7,9 @@ logging.level: ${LOG_LEVEL:critical}
 filebeat.prospectors:
 - input_type: log
   paths:
-  - "/var/log/containers/*.log"
-  - "/var/log/docker/containers/*.log"
-  - "/var/lib/docker/containers/*.log"
+  - "/var/log/containers/*/*.log"
+  - "/var/log/docker/containers/*/*.log"
+  - "/var/lib/docker/containers/*/*.log"
   symlinks: true
   json.message_key: log
   json.keys_under_root: true
