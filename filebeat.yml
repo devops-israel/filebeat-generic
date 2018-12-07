@@ -6,10 +6,7 @@ logging.level: ${LOG_LEVEL:critical}
 
 filebeat.prospectors:
 - input_type: log
-  paths:
-  - "/var/log/containers/*/*.log"
-  - "/var/log/docker/containers/*/*.log"
-  - "/var/lib/docker/containers/*/*.log"
+  paths: ${PATHS:?No path is configured. Use env var PATHS to set (MUST BE AN ARRAY.}
   symlinks: true
   json.message_key: log
   json.keys_under_root: true
@@ -22,4 +19,5 @@ filebeat.prospectors:
 
 output.redis:
   hosts: ${REDIS_HOST:?No Redis host configured. Use env var REDIS_HOST to set host.}
-  key: "filebeat"
+  key: ${REDIS_KEY:filebeat}
+

@@ -9,6 +9,8 @@ You can provide following environment variables to customize it.
 ```bash
 REDIS_HOST=example.com:6379
 LOG_LEVEL=info  # log level for filebeat. Defaults to "error".
+REDIS_PASSWORD=securepassword  # log level for filebeat. Defaults to "error".
+PATHS="/var/log/containers/*/*.log,/var/log/docker/containers/*/*.log,/var/lib/docker/containers/*/*.log,/var/log/*/*.log"
 ```
 
 Check out the `docker-compose.prod.yml` and see what folders need to be mounted so filebeat can tail the files and send the logs.
